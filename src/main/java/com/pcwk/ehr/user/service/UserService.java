@@ -5,10 +5,12 @@ import java.util.List;
 
 import org.springframework.dao.EmptyResultDataAccessException;
 
+import com.pcwk.ehr.chart.domain.LevelPerMemberVO;
 import com.pcwk.ehr.user.domain.UserVO;
 
 public interface UserService {
 
+	List<LevelPerMemberVO> levelPerMemberCount(LevelPerMemberVO inVO)  throws SQLException;	
 	/**
 	 * 아이디 중복 체크
 	 * @param inVO
