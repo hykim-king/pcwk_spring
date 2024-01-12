@@ -26,6 +26,7 @@ import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 import org.springframework.transaction.support.TransactionSynchronizationManager;
 
+import com.pcwk.ehr.chart.domain.LevelPerMemberVO;
 import com.pcwk.ehr.user.dao.UserDao;
 import com.pcwk.ehr.user.domain.Level;
 import com.pcwk.ehr.user.domain.UserVO;
@@ -191,6 +192,11 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public int idDuplicateCheck(UserVO inVO) throws SQLException {
 		return userDao.idDuplicateCheck(inVO);
+	}
+
+	@Override
+	public List<LevelPerMemberVO> levelPerMemberCount(LevelPerMemberVO inVO) throws SQLException {
+		return userDao.levelPerMemberCount(inVO);
 	}
 
 }
