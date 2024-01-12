@@ -3,6 +3,7 @@ package com.pcwk.ehr.chart.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,11 +12,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.google.gson.JsonArray;
 import com.pcwk.ehr.chart.domain.PizzaVO;
 import com.pcwk.ehr.cmn.PcwkLogger;
+import com.pcwk.ehr.user.service.UserService;
 
 @Controller
 @RequestMapping("chart")
 public class ChartController implements PcwkLogger{
 
+	@Autowired
+	UserService userService;
 	
 	public ChartController() {}
 	
