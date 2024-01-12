@@ -29,16 +29,17 @@
             asyn:"false",
             dataType:"json",
             data:{  
+            	"year":2023
             },
             success:function(chartData){//통신 성공
                 console.log("success data:"+chartData);
                 let data = new google.visualization.DataTable();
-                data.addColumn('string', 'Topping');
-                data.addColumn('number', 'Slices');  
+                data.addColumn('string', 'levelName');
+                data.addColumn('number', 'count');  
                 data.addRows(chartData);
                 
                 // Set chart options     
-                let options = {'title':'어제 먹은 피자',
+                let options = {'title':'년도별 회원 등급 인원',
                                'width':800,
                                'height':600};
 
