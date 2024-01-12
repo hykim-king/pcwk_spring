@@ -29,7 +29,7 @@
             asyn:"false",
             dataType:"json",
             data:{  
-            	"year":2023
+            	"year":document.querySelector("#year").value
             },
             success:function(chartData){//통신 성공
                 console.log("success data:"+chartData);
@@ -63,9 +63,28 @@
       }
     </script>
   </head>
-
+ 
   <body>
     <div class="container">
+    <!-- 제목 -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">회원 등급별 인원수</h1>
+        </div>
+    </div>    
+    <!--// 제목 ----------------------------------------------------------------->
+
+      <div class="row justify-content-end">
+          <div class="col-auto">
+	          <select name="year" id="year" class="form-select" >
+	              <option value="2023">2023</option>
+	              <option value="2024">2024</option>
+	          </select>
+          </div>
+          <div class="col-auto ">
+              <input type="button" value="목록" class="btn btn-primary" onclick="drawChart()">
+          </div>
+      </div>
 	    <!--Div that will hold the pie chart-->
 	    <div id="chart_div"></div>
 	    <jsp:include page="/WEB-INF/cmn/footer.jsp"></jsp:include>
